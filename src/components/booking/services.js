@@ -5,6 +5,7 @@ import overnightIcon from '../../assets/overnight.png';
 import logo from '../../assets/logo-color.png';
 import {AppContext} from "../../App";
 import {Link} from "react-router-dom";
+import './Services.css'
 
 export default function Services() {
 	const appProps = useContext(AppContext);
@@ -17,7 +18,7 @@ export default function Services() {
 						<img src={walkIcon}
 						     alt={'walk'}
 						     onClick={ () => appProps.handleServiceClick('Walk')}/>
-						<p>Walk</p>
+						<p className ='links'>Walk</p>
 					</Link>
 				</div>
 				<div className={'booking-service-groom-icon'}>
@@ -25,7 +26,7 @@ export default function Services() {
 						<img src={groomIcon}
 						     alt={'groom'}
 						     onClick={ () => appProps.handleServiceClick('Groom')}/>
-						<p>Groom</p>
+						<p className ='links'>Groom</p>
 					</Link>
 				</div>
 				<div className={'booking-service-overnight-icon'}>
@@ -33,7 +34,7 @@ export default function Services() {
 						<img src={overnightIcon}
 						     alt={'overnight'}
 						     onClick={ () => appProps.handleServiceClick('Overnight')}/>
-						<p>Overnight</p>
+						<p className ='links'>Overnight</p>
 					</Link>
 				</div>
 			</div>
