@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {getAppointmentById} from "../../services/api-helper";
+import {getAppointmentById, deleteAppointmentById} from "../../services/api-helper";
 import Cancel from '../../assets/cancel.png';
 import Edit from '../../assets/edit.png';
 
@@ -21,6 +21,16 @@ export default function DashboardListItem(props) {
 		theService = appointmentData.data.service;
 	}
 
+	const handleDelete = deleteAppointmentById(props.appointmentID).then(res => {
+		if (res.status === 200) {
+			return "appointment deleted";
+		} else {
+			return ('deletion error');
+		}
+	}).catch(error => {
+		return error;
+	});
+
 	return (
 		<div className={'upcoming-appointment'}>
 			<div className={'upcoming-app-details-container'}>
@@ -33,7 +43,9 @@ export default function DashboardListItem(props) {
 					<img src={Edit} alt={'edit appointment'}/>
 				</div>
 				<div className={'appointment-cancel-icon'}>
-					<img src={Cancel} alt={'cancel appointment'}/>
+					<img src={Cancel}
+					     alt={'cancel appointment'}
+					     onClick={() => handleDelete}/>
 				</div>
 			</div>
 		</div>

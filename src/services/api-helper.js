@@ -23,3 +23,7 @@ export const createAppointment = async (appointment) => {
 export const getAppointmentById = async (appointment) => {
     return await api.get(`/appointments/${appointment}`);
 };
+
+export const deleteAppointmentById = async (appointmentID) => {
+    return await api.delete(`/appointments/${appointmentID}`);
+};
