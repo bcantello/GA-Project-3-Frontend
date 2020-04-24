@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-body.about-team-body {
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about-team-body {
     background-color: white;
     margin-top: 25px;
 }
 
-/* 'OUR TEAM' INTRO */
 h1.abouth1 {
     color: #E56C4E;
     font-size: 28px;
@@ -20,13 +25,53 @@ p.about-team {
     margin-bottom: 25px;
 }
 
-/* TEAM MEMBER LIST CONTAINER */
 .team-members {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.member-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+/* INDIVIDUAL TEAM MEMBERS */
+.member-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.member-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.member-3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.member-4 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 24px;
 }
 
 /* TEAM MEMBER CONTENT ITEMS */
@@ -36,8 +81,13 @@ p.about-team {
     width: 55px;
     height: 55px;
     margin-top: 10px;
+    margin-right: 13px;
     margin-bottom: 10px;
-    justify-self: flex-start;
+    margin-left: 0;
+}
+
+.member-content {
+    display: inline;
 }
 
 h2.member-name {
@@ -45,7 +95,8 @@ h2.member-name {
     font-size: 20px;
     font-weight: 600;
     text-align: left;
-    margin-bottom: 8px;
+    padding-top: 4px;
+    margin-bottom: 4px;
 }
 
 h3.member-title {
@@ -60,7 +111,8 @@ h3.member-title {
 p.about-member {
     color: #A9A9A9;
     text-align: left;
-    margin-bottom: 13px;
+    margin-top: 4px;
+    margin-bottom: 18px;
 }
 
 .social-links {
@@ -84,8 +136,6 @@ p.about-member {
     text-decoration: none;
 }
 
-/* SOCIAL ICON INDIVIDUAL FORMATTING */
-
 .github, .github > a, .github:hover {
     text-decoration: none;
 }
@@ -93,8 +143,8 @@ p.about-member {
 .icon-social-github {
     color: #353535;
     text-decoration: none;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 18px;
+    margin-right: 18px;
 }
 
 .linkedin, .linkedin > a, .linkedin:hover {
@@ -104,8 +154,8 @@ p.about-member {
 .icon-social-linkedin {
     color: #353535;
     text-decoration: none;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 18px;
+    margin-right: 18px;
 }
 
 .portfolio, .portfolio > a, .portfolio:hover {
@@ -115,6 +165,203 @@ p.about-member {
 .icon-globe {
     color: #353535;
     text-decoration: none;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+  .team-members{
+     display: grid;
+     grid-template-columns: repeat(2,.5fr);
+     grid-template-rows: repeat(2,.5fr);
+     margin: 15px;
+     padding-top: 50px;
+  }
+  
+  .member-photo {
+      display: flexbox;
+      border-radius: 50%;
+      background-color: #A9A9A9;
+      width: 55px;
+      height: 55px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 50px;
+  }
+  
+  h2.member-name {
+      color: #E56C4E;
+      font-size: 25px;
+      font-weight: 600;
+      text-align: left;
+      margin-left: 23px;   
+  }
+  
+  h3.member-title {
+      color: #A9A9A9;
+      font-style: italic;
+      font-size: 20px;
+      font-weight: 400;
+      text-align: left;
+      margin-bottom: 6px;
+      margin-left: 23px;    
+  }
+  
+  p.about-member {
+      color: #A9A9A9;
+      text-align: left;
+      margin: 20px;  
+      margin-left: 50px; 
+  }
+  
+  body.about-team-body {
+      background-color: white;
+      margin-top: 40px;
+  }
+  
+  h1.abouth1 {
+      color: #E56C4E;
+      font-size: 40px;
+      font-weight: 600;
+      margin-top: 25px;
+      margin-bottom: 13px;
+  }
+  
+  p.about-team {
+      color: #A9A9A9;
+      text-align: center;
+      margin-bottom: 25px;
+  }
+  
+  .icon-social-github {
+      color: #353535;
+      text-decoration: none;
+      margin-left: 50px;
+      margin-right: 19px;
+      font-size: 20px;
+  }
+  
+  .icon-social-linkedin {
+      color: #353535;
+      text-decoration: none;
+      margin-left: 4px;
+      margin-right: 19px;
+      font-size: 20px;
+  }
+  
+  .icon-globe {
+      color: #353535;
+      text-decoration: none;
+      margin-left: 5px;
+      margin-right: 19px;
+      font-size: 20px;
+  } 
+}
+
+@media (min-width: 769px){
+    .team-members{
+        display: grid;
+        grid-template-columns: repeat(2,.5fr);
+        grid-template-rows: repeat(2,.5fr);
+        margin-left: 40px;
+        padding-top: 50px;  
+     }
+  
+     .member-photo {
+        display: flexbox;
+        border-radius: 50%;
+        background-color: #A9A9A9;
+        width: 80px;
+        height: 80px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 50px;   
+    }
+  
+    h2.member-name {
+        color: #E56C4E;
+        font-size: 25px;
+        font-weight: 600;
+        text-align: left;
+        margin-left: 12px;  
+        margin-bottom: 10px; 
+    }
+  
+    h3.member-title {
+        color: #A9A9A9;
+        font-style: italic;
+        font-size: 22px;
+        font-weight: 400;
+        text-align: left;
+        margin-bottom: 6px;
+        margin-left: 12px;    
+    }
+  
+    p.about-member {
+        /* color: #A9A9A9; */
+        color: rgb(107, 98, 98);
+        text-align: left;
+        margin: 20px;  
+        margin-left: 50px; 
+        margin-right: 100px;
+        font-size: 20px;
+    }
+  
+    body.about-team-body {
+        background-color: white;
+        margin-top: 40px;
+    }
+  
+    h1.abouth1 {
+        color: #E56C4E;
+        font-size: 50px;
+        font-weight: 600;
+        margin-top: 25px;
+        margin-bottom: 13px;
+    }
+  
+    p.about-team {
+        color: #A9A9A9;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+  
+    .icon-social-github {
+        color: #353535;
+        text-decoration: none;
+        margin-left: 50px;
+        margin-right: 4px;
+        font-size: 30px;
+    }
+  
+    .icon-social-linkedin {
+        color: #353535;
+        text-decoration: none;
+        margin-left: 4px;
+        margin-right: 4px;
+        font-size: 30px;
+    }
+  
+    .icon-globe {
+        color: #353535;
+        text-decoration: none;
+        margin-left: 5px;
+        margin-right: 4px;
+        font-size: 30px;
+    } 
+  
+    h1.abouth1 {
+        color: #E56C4E;
+        font-size: 40px;
+        font-weight: 600;
+        margin-top: 25px;
+        margin-bottom: 13px;
+    }  
+  
+    p.about-team {
+        color: #A9A9A9;
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 25px;
+    }
 }

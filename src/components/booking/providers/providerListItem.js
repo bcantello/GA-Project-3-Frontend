@@ -1,21 +1,20 @@
 import React, {useContext} from "react";
-import {Link} from "react-router-dom";
 import Book from '../../../assets/book.png'
 import {AppContext} from "../../../App";
 import {createAppointment} from "../../../services/api-helper";
+import history from "../../../history";
 
-export default function ProvidersListItem(props) {
+function ProvidersListItem(props) {
 	const appProps = useContext(AppContext);
 
 	const handleBookClick = async(e) => {
-		let book = props.element['_id'];
-		appProps.setChosenProvider(book);
 		e.preventDefault();
+		let book = props.element['_id'];
+		setProviderID(book)
 		const json = await createAppointment(appProps.appointmentInfo).then((response) => {
-			console.log("APPOINTMENT INFO FROM PROVIDER ",appProps.appointmentInfo)
 			if (response.status === 200) {
-				console.log(response.data);
 				appProps.setNewAppointment([...appProps.newAppointment, appProps.appointmentInfo]);
+				history.push("/confirmation");
 			} else {
 				return ('login error');
 			}
@@ -24,19 +23,25 @@ export default function ProvidersListItem(props) {
 		});
 	};
 
+	const setProviderID = (id) => {
+		appProps.setChosenProvider(id);
+	};
+
 	return (
 		<div className={'provider-item'}>
-			<div className={'provider-image'}><img
-				src={props.element.img}
-				alt={'provider'}/></div>
-			<div className={'provider-name'}>{props.element.name}</div>
+			<div className={'provider-img-name-container'}>
+				<div className={'provider-image'}><img
+					src={props.element.img}
+					alt={'provider'}/></div>
+				<div className={'provider-name'}>{props.element.name}</div>
+			</div>
 			<div className={'book-provider-icon'}>
-				<Link to={'/confirmation'}>
-					<img src={Book}
-					     alt={'book me'}
-					     onClick={() => handleBookClick}/>
-				</Link>
+				<img src={Book}
+				     alt={'book me'}
+				     onClick={handleBookClick}/>
 			</div>
 		</div>
 	);
-};
+}
+
+export default ProvidersListItem;

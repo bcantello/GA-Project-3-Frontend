@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, serif;
+}
+
+#cal-service-title {
+    color: #E56C4E;
+    margin: 2em 0 .25em 0;
+}
+
+#cal-sub-heading {
+    color: #A9A9A9;
+    margin-bottom: 2em;
+}
+
+#calendar-container {
+    width: 75vw;
+    margin: 0 auto 3em auto;
+}
+
+.react-calendar {
+    box-shadow: 4px 6px 12px #5E5D5D;
+    margin: 0 auto;
+}
+
+.react-time-picker__wrapper {
+    box-shadow: 4px 6px 12px #5E5D5D;
+    width: 55vw;
+}
+
+.react-calendar__navigation__label {
+    color: #29928e;
+    font-size: 1em;
+}
+
+#cal-button {
+    width: 65vw;
+    height: 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 2em;
+    border: solid 1px #E56C4E;
+    border-radius: 10px;
+    background-color: #E56C4E;
+    color: white;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    #cal-service-title {
+        font-size: 3em;
+    }
+
+    #cal-sub-heading {
+        font-size: 2em;
+    }
+
+    .react-calendar {
+        height: 300px;
+        width: 350px;
+    }
+
+    .react-time-picker__wrapper {
+        width: 250px;
+    }
+
+    #cal-button {
+        width: 350px;
+        height: 60px;
+        font-size: 2em;
+        margin-top: 3em;
+    }
+}
+
+@media (min-width: 1023px) {
+    #cal-service-title {
+        font-size: 4em;
+        margin-top: 1.5em;
+    }
+
+    #cal-sub-heading {
+        font-size: 3em;
+        margin-bottom: .5em;
+    }
+
+    .react-calendar {
+        height: 300px;
+        width: 350px;
+    }
+
+    .react-time-picker__wrapper {
+        width: 250px;
+    }
+
+    #cal-button {
+        width: 350px;
+        height: 60px;
+        font-size: 2em;
+        margin-top: 3em;
+    }
+
+}

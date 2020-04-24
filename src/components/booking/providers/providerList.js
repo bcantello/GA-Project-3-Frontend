@@ -5,21 +5,18 @@ import {AppContext} from "../../../App";
 export default function ProvidersList() {
 	const appContext = useContext(AppContext);
 	const providerArr = [];
-	let providerArray = this;
+	const requestedService = appContext.service.toLowerCase();
 
 	function localServiceProvidersArr() {
 		appContext.localProviders[0].forEach(provider => {
-			if (provider.services[0].walk === true) {
+			if (provider.services[0][requestedService] === true) {
 				providerArr.push(provider);
 			}
 		});
 	}
 	localServiceProvidersArr();
 
-	for (let i = 0; i < providerArr.length; i++) {
-		let tempArray = providerArr[i];
-		console.log(tempArray);
-		providerArray = providerArr.map((e, index) => {
+		const providerArray = providerArr.map((e, index) => {
 			return (
 				<ProvidersListItem
 				element={e}
@@ -27,9 +24,8 @@ export default function ProvidersList() {
 				/>
 			);
 		});
-	}
 
 	return (
-		<div>{providerArray}</div>
+		<div id={'providers-container'}>{providerArray}</div>
 	);
 };

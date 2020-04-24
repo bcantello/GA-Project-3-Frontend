@@ -4,13 +4,13 @@
     box-sizing: border-box;
 }
 
-nav, footer {
+/* nav, footer {
     display: none;
-}
+} */
 
-body {
+.auth-body {
     background-image: url("../../assets/background.png");
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;       
@@ -38,15 +38,14 @@ body {
 .Login, .SignUp {
     width: 85%;
     font-family: Roboto;
-    background-color: #f2f0f0;
-    opacity: 80%;
-    box-shadow: 6px 4px 12px 25% #353535;
-    border-radius: 8px;
+    background: rgba(249, 247, 247, 0.9);
+    box-shadow: 20px 25px 13px -20px rgba(0,0,0,0.35);
+    border-radius: 9px;
     text-align: center;
 }
 
 .User-Login, .Create-Account {
-    color: #353535;
+    color: #5E5D5D;
     padding: 30px;
     font-size: 1.7em;
 }
@@ -54,12 +53,13 @@ body {
 .Login-Form, .SignUp-Form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.Login-Form-Input, .SignUp-Form-Input {
-    font-weight: 500;
+.Login-Form-Input {
+    font-weight: 400;
     font-family: Roboto;
-    color: #353535;
+    color: #6A6A6A;
     width: 85%;
     padding: 12px 20px;
     margin: 8px auto;
@@ -68,29 +68,99 @@ body {
     background: #ffffff;   
 }
 
-.Login-Form-Button, .SignUp-Form-Button {
-    color:#ffffff;
-    border-radius: 1px;
-    width: 20%;
-    margin: 20px auto;
-    background-color: #e56c4e;
-    padding: 10px 15px;    
+.SignUp-Form-Input {
+    font-weight: 400;
+    font-family: Roboto;
+    color: #6A6A6A;
+    width: 85%;
+    padding: 12px 20px;
+    margin: 8px auto;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    background: #ffffff;   
 }
 
-.Login p, .Login a, .SignUp p, .SignUp a {
+/* PSA: If you decide to touch the button CSS, or even think about just breathing near it... 
+pls reconsider. I am so tired. */
+
+.SignUp-Form-Button {
+    color:#ffffff;
+    border: none;
+    border-radius: 1px;
+    width: 20%;
+    margin: 20px 0 8px 0;
+    background-color: #e56c4e;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    -webkit-text-stroke: 0.5px #e56c4e;
+    letter-spacing: 1.4px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.Login-Form-Button {
+    color:#ffffff;
+    border: none;
+    border-radius: 1px;
+    width: 20%;
+    margin: 20px 0 8px 0;
+    background-color: #e56c4e;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    -webkit-text-stroke: 0.5px #e56c4e;
+    letter-spacing: 1.4px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.Login-Form-Button:hover, .SignUp-Form-Button:hover {
+      cursor: pointer;
+      opacity: 90%;
+}
+
+p.login-prompt {
+    color: #5E5D5D;
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    font-family: Roboto;
+    font-size: .9em;
+    text-decoration:none;
+}
+
+p.login-prompt > a, p.login-prompt > a:visited {
+    text-decoration:none;
+    color: #5E5D5D;
+}
+
+p.login-prompt > a:hover {
+    color: #e56c4e;
+    text-decoration: underline;
+    text-decoration-color: #e56c4e;
+}
+
+/* .SignUp p, .SignUp a {
     color: #353535;
     margin-top: 0;
     padding-bottom: 14px;
     font-family: Roboto;
     font-size: .9em;
     text-decoration:none;
-}
+} */
 
-a:hover {
-    color: #e56c4e;
-    text-decoration: underline;
-    text-decoration-color: #e56c4e;
-}
+
+/* a:visited {
+    color: #353535;
+    text-decoration: none;
+} */
 
 @media(min-width: 375px) {
     .Login-Image {
@@ -110,9 +180,9 @@ a:hover {
         width: 75%;
     }
 
-    .Login p, .Login a, .SignUp p, .SignUp a {
+    /* .Login p, .Login a, .SignUp p, .SignUp a {
         font-size: .9em;
-    }
+    } */
 }
 
 @media(min-width: 425px) {
@@ -129,9 +199,9 @@ a:hover {
         font-size: 1.3em;      
     } 
 
-    .Login p, .Login a, .SignUp p, .SignUp a {
+    /* .Login p, .Login a, .SignUp p, .SignUp a {
         font-size: .7em;
-    }
+    } */
 }
 
 @media(min-width: 768px) {
@@ -168,21 +238,33 @@ a:hover {
 }
 
 .Login-Form-Input, .SignUp-Form-Input {
-    font-weight: 600;
+    font-weight: 400;
     font-size: .9em;   
 }
 
 .Login-Form-Button, .SignUp-Form-Button {
-    font-size: 1em;
+    color:#ffffff;
+    border: none;
+    border-radius: 1px;
+    width: 120px;
+    margin: 20px 0 8px 0;
+    background-color: #e56c4e;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 1.2em;
     font-weight: 600;
-    letter-spacing: .5px;
-    width: 120px;    
+    -webkit-text-stroke: 0.5px #e56c4e;
+    letter-spacing: 1.4px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
 }
 
-.Login p, .Login a, .SignUp p, .SignUp a {
+/* .Login p, .Login a, .SignUp p, .SignUp a {
     font-size: 1em;
     text-decoration:none;
-}
+} */
 
 @media(min-width: 1440px) {
     .Login-Image {

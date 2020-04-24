@@ -32,11 +32,12 @@ function Login(props) {
 
     const handleSuccessfulAuth = (data) => {
         appProps.handleLogin(data);
-        props.history.push("/services");
+        props.history.push("/dashboard");
     };
 
     return (
         <>
+        <div className="auth-body">
             <img className="Login-Image" src="https://res.cloudinary.com/de2i4dwok/image/upload/v1587589538/Project3/logo-white_qn3hrm.png" alt="Fetch logo" />
             <div className="Login-Container">
                 <div className="Login">
@@ -57,9 +58,10 @@ function Login(props) {
                                onChange={handleChange} required/>
                         <button className="Login-Form-Button" type="submit">continue</button>
                     </form>
-                    <p>Don't have an account? <Link to="/signup">Create one.</Link></p>
+                    <p className="login-prompt">Don't have an account? <Link to="/signup">Create one!</Link></p>
                 </div>
             </div>
+        </div>
         </>
     );
 }

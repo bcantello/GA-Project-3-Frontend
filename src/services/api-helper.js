@@ -2,10 +2,6 @@ import axios from 'axios'
 
 const api = axios.create({
     baseURL: "https://fetch-app-heroku.herokuapp.com/"
-    // headers: {
-    //     'Access-Control-Allow-Origin': '*',
-    //     'Content-Type': 'application/json'
-    // },
 });
 
 export const createUser = async (user) => {
@@ -21,6 +17,9 @@ export const getProviderByZip = async (zip) => {
 };
 
 export const createAppointment = async (appointment) => {
-    console.log("APPOINTMENT FROM HELPER: ",appointment);
     return await api.post('/appointments/', appointment);
-}
+};
+
+export const getAppointmentById = async (appointment) => {
+    return await api.get(`/appointments/${appointment}`);
+};

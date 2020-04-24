@@ -6,6 +6,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    height: 100vh;
 }
 
 .conf-page {
@@ -16,7 +17,7 @@
 }
 
 .conf-box {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(249, 247, 247, 0.9);
     box-shadow: 20px 25px 13px -20px rgba(0,0,0,0.35);
     border-radius: 9px;
     height: 100%;
@@ -76,12 +77,12 @@ p.conf-par {
 .conf-cal {
     width: 35px;
     height: 35px;
-    margin: 3px 0 13px 0;
+    margin: 13px 0 13px 0;
 }
 
 @media (min-width: 1024px) {
     .conf-box {
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(249, 247, 247, 0.9);
         box-shadow: 20px 25px 13px -20px rgba(0,0,0,0.35);
         border-radius: 9px;
         height: 100%;
@@ -145,6 +146,6 @@ p.conf-par {
     .conf-cal {
         width: 50px;
         height: 50px;
-        margin: 3px 0 13px 0;
+        margin: 13px 0 13px 0;
     }
 }

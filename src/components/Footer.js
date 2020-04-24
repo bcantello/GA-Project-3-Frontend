@@ -3,9 +3,11 @@ import '../index.css'
 
 function Footer() {
     return (
-        <footer id={'footer-container'}>
-            <p id={'footer-content'}>&copy; Fetch! 2020</p>
-        </footer>
+
+        <div className="footer-container">
+            <p className="footer-class">&copy; 2020</p>
+        </div>
+        
     );
 }
 
